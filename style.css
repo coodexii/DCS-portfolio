@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family:   'Courier New', Courier, monospace,Arial;
+}
+
+body{
+min-height: 100vh;
+background: linear-gradient(135deg, #0B1F17,#06281D);
+display:flex;
+align-items: center;
+justify-content: center;
+}
+
+.Hero{
+    background: rgba(14, 22, 35,0.3);
+    width: 90%;
+    max-width: 1000px;
+    border-radius:20px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:30px;
+    box-shadow:0 20px 40px rgpa(0,0,0,35);
+    
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.badge{
+    background: RGBA(34,197,94,0.15);
+    color:#86EFAC;
+    padding:6px 14px;
+    width: fit-content;
+    border-radius: 20px;
+    border: 1px solid rgba(134, 239, 172,0.4);
+    font-size: 14px;
+    margin-bottom: 15px;
+    
+}
+
+.content h1{
+    font-size: 32px;
+    margin-bottom: 15px;
+    color:#ECFDF5;
+
+}
+
+.content p{
+color:#a7f3d0;
+line-height: 1.9;
+margin-bottom: 25px;
+}
+
+.buttons{
+ display: flex;
+ gap:10px;
+ flex-wrap: warp;
+}
+
+.btn{
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn.primary{
+    border:1px solid #86efac;
+    color:#86EFAC;
+    
+}
+.btn.primary:hover{
+background: #0f352b;
+}
+
+.btn.outline{
+    border:1px solid #86efac;
+    color:#86EFAC;
+}
+
+.btn.outline:hover{
+background: #0f352b;
+}
+
+.image-box img{
+width: 100%;
+border-radius: 14px;
+object-fit: cover;
+box-shadow: 0 10px 40px rgba(4, 237, 159, 0.15);
+}
+
+@media (max-width: 768px){
+    .Hero{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .buttons{
+        justify-content: center;
+    }
+}
+
+.bg{
+    
+    position: fixed;
+    inset: 0;
+    background: 
+    radial-gradient(600px circle at 10% 10% , rgba(59,130,246,0.15), transparent 40%),
+    radial-gradient(600px circle at 90% 20% , rgba(16,185,129,0.15), transparent 40%),
+    radial-gradient(600px circle at 50% 90% , rgba(236,272,153,0.15), transparent 40%),
+    linear-gradient(135deg, #0f2027, #203a43,#2c5364);
+    z-index: -1;
+    animation: floatBg 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatBg{
+    0% {
+        filter:blur(0px);
+        transform: scale(1);
+    }
+    100%{
+      filter: blur(1.5px);
+      transform: scale(1.03);
+    }
+    
+
+}
+
+.Hero{
+transition: transform 0.3s  ease box-shadow 0.3s ease ;
+}
+
+.Hero:hover{
+    transform:  translateY(-4px);
+    box-shadow: 0 30px 60px rgba(0,0,0,25);
+}
